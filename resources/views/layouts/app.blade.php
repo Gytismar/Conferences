@@ -10,15 +10,20 @@
 </head>
 <body>
 <div>
-    <header style="margin: 10px">
-        @guest
-            <a href="{{ route('login') }}">Login</a>
-        @else
-            <a href="{{ route('logout') }}" id="logout-btn">Logout ({{ auth()->user()->name }})</a>
-            <form action="{{ route('logout') }}" method="POST" id="logout-form" class="d-none">
-                @csrf
-            </form>
-        @endguest
+    <header class="m-10">
+        <nav class="navbar navbar-container">
+            <div>
+                <a href="{{ url('/conferences') }}">Conferences</a>
+            </div>
+            @guest
+                <a href="{{ route('login') }}">Login</a>
+            @else
+                <a href="{{ route('logout') }}" id="logout-btn">Logout ({{ auth()->user()->name }})</a>
+                <form action="{{ route('logout') }}" method="POST" id="logout-form" class="d-none">
+                    @csrf
+                </form>
+            @endguest
+        </nav>
     </header>
     @yield('content')
 </div>
