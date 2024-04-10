@@ -9,7 +9,7 @@
         <form action="{{ route('conferences.destroy', ['conference' => $conference['id']]) }}" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit">Delete</button>
+            <button type="button" data-delete>Delete</button>
         </form>
     @else
         <a href="{{ route('conferences.edit', ['conference' => $conference['id']]) }}"><button type="button">Show details</button></a>
