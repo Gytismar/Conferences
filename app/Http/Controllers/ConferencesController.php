@@ -43,7 +43,7 @@ class ConferencesController extends Controller
 
         $request->session()->flash('status', 'Conference created');
 
-        return redirect()->route('conferences.show', ['id' => $conferenceItem->id]);
+        return redirect()->route('conferences.show', ['conference' => $conferenceItem->id]);
     }
 
     /**
