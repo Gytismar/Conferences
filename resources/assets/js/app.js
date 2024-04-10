@@ -1,5 +1,4 @@
 import './bootstrap';
-require('flatpickr')
 import $ from 'jquery';
 window.$ = window.jQuery = $; //Accessible jquery via $
 
@@ -12,7 +11,8 @@ $(function (){
 
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-delete]').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
             const isConfirmed = confirm('Are you sure you want to delete this conference?');
 
             if (isConfirmed) {
@@ -21,3 +21,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
