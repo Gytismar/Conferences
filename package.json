@@ -16,6 +16,7 @@
         "sass-loader": "^12.1.0"
     },
     "dependencies": {
+        "bootstrap": "^5.3.3",
         "flatpickr": "^4.6.13",
         "jquery": "^3.7.1",
         "spectre.css": "^0.5.9"
