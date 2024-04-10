@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Conference;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 use PhpParser\Node\Stmt\Return_;
 use App\Http\Requests\StoreconferenceRequest;
@@ -40,6 +41,8 @@ class ConferencesController extends Controller
         $validated = $request->validated();
 
         $conferenceItem = $conference->create($validated);
+
+        Log::info('Conference created', ['id' => $conferenceItem->id, 'title' => $conferenceItem->title]);
 
         $request->session()->flash('status', 'Conference created');
 
