@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "flatpickr": "^4.6.13",
+        "jquery": "^3.7.1",
         "spectre.css": "^0.5.9"
     }
 }
