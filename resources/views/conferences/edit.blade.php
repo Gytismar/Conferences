@@ -7,6 +7,8 @@
         @csrf
         @method('PUT')
         @include('conferences.partials.form')
-        <div><input type="submit" value="Update"></div>
+        @auth
+            <div><input type="submit" value="Update"></div>
+        @endauth
     </form>
 @endsection
