@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Conferences list</h1>
+<div class="container">
+    <h1 class="mb-4">Conferences list</h1>
     @if(session('status'))
-        <div style="background-color: green">{{ session('status') }}</div>
+        <div class="alert alert-success">{{ session('status') }}</div>
     @endif
     @auth
-        <a href="{{ route('conferences.create') }}"><button type="button">Create conference</button></a>
+        <a href="{{ route('conferences.create') }}" class="btn btn-success mb-3">Create conference</a>
     @endauth
     @each('conferences.partials.list', $conferences, 'conference')
+</div>
 @endsection

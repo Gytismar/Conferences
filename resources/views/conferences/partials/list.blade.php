@@ -1,17 +1,20 @@
-<div>
-    <h4>{{ $conference['title'] }}</h4>
-    <p>{{ $conference['content'] }}</p>
-    <p>Date: {{ optional($conference['conference_date'])->format('F d, Y') }}</p>
-    <p>Address: {{ $conference['address'] }}</p>
-    <p>Attending People Count: {{ $conference['attending_people_count'] }}</p>
-    @auth
-        <a href="{{ route('conferences.edit', ['conference' => $conference['id']]) }}"><button type="button">Edit</button></a>
-        <form action="{{ route('conferences.destroy', ['conference' => $conference['id']]) }}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="button" data-delete>Delete</button>
-        </form>
-    @else
-        <a href="{{ route('conferences.edit', ['conference' => $conference['id']]) }}"><button type="button">Show details</button></a>
-    @endauth
+<div class="card mb-3 text-center">
+    <h4 class="card-title">{{ $conference['title'] }}</h4>
+    <p class="card-text">{{ $conference['content'] }}</p>
+    <p class="card-text">Date: {{ optional($conference['conference_date'])->format('F d, Y') }}</p>
+    <p class="card-text">Address: {{ $conference['address'] }}</p>
+    <p class="card-text">Attending People Count: {{ $conference['attending_people_count'] }}</p>
+    <div class="card-footer text-center">
+        @auth
+            <a href="{{ route('conferences.edit', ['conference' => $conference['id']]) }}" class="btn btn-primary">Edit</a>
+            <form action="{{ route('conferences.destroy', ['conference' => $conference['id']]) }}" method="POST" class="d-inline">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger" data-delete>Delete</button>
+            </form>
+        @else
+            <a href="{{ route('conferences.show', ['conference' => $conference['id']]) }}" class="btn btn-primary">Show details</a>
+        @endauth
+    </div>
 </div>
+
