@@ -11,3 +11,42 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.equal-height-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.equal-height-card .card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-body {
+    flex: 1;
+}
+
+.card-footer {
+    padding: 1rem 1rem;
+    margin: 0;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+.btn-edit {
+    margin-right: 10px;
+}
+
+.logout-btn {
+    color: #333 !important;
+}

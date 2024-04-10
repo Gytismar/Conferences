@@ -7,6 +7,8 @@
     <form action="{{ route('conferences.store') }}" method="POST">
         @csrf
         @include('conferences.partials.form')
-        <div><input type="submit" value="Create"></div>
+        <div class="card-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
     </form>
 @endsection

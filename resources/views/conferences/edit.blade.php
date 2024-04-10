@@ -8,7 +8,9 @@
         @method('PUT')
         @include('conferences.partials.form')
         @auth
-            <div><input type="submit" value="Update"></div>
+            <div class="card-footer d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
         @endauth
     </form>
 @endsection
