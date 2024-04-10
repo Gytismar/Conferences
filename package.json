@@ -9,7 +9,7 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "axios": "^0.21",
+        "axios": "1.6.8",
         "laravel-mix": "^6.0.6",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.74.1",
@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "flatpickr": "^4.6.13",
+        "jquery": "^3.7.1",
         "spectre.css": "^0.5.9"
     }
 }
