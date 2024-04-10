@@ -2,9 +2,9 @@
 
 @section('content')
     @if(session('status'))
-        <div style="background-color: green; color: lime">{{ session('status') }}</div>
+        <div class="alert alert-success">{{ session('status') }}</div>
     @endif
-    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="d-flex justify-content-center align-items-center">
         @include('conferences.partials.list', ['conference' => $conference])
     </div>
 @endsection
