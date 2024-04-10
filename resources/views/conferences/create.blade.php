@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Conference creation form')
+@section('title', __('site.conference_creation_form_title'))
 
 @section('content')
     <h4>Conference creation form</h4>
@@ -8,7 +8,7 @@
         @csrf
         @include('conferences.partials.form')
         <div class="card-footer d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">@lang('site.create')</button>
         </div>
     </form>
 @endsection

@@ -6,14 +6,14 @@
         <p class="card-text">Attending People Count: {{ $conference['attending_people_count'] }}</p>
         <div class="card-footer d-flex justify-content-center">
             @auth
-                <a href="{{ route('conferences.edit', ['conference' => $conference['id']]) }}" class="btn btn-edit btn-primary">Edit</a>
+                <a href="{{ route('conferences.edit', ['conference' => $conference['id']]) }}" class="btn btn-edit btn-primary">@lang('site.edit')</a>
                 <form action="{{ route('conferences.destroy', ['conference' => $conference['id']]) }}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger" data-delete>Delete</button>
+                    <button type="submit" class="btn btn-danger" data-delete>@lang('site.delete')</button>
                 </form>
             @else
-                <a href="{{ route('conferences.edit', ['conference' => $conference['id']]) }}" class="btn btn-primary">Show details</a>
+                <a href="{{ route('conferences.edit', ['conference' => $conference['id']]) }}" class="btn btn-primary">@lang('site.show_details')</a>
             @endauth
         </div>
     </div>

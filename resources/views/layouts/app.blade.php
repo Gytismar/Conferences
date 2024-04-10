@@ -13,12 +13,12 @@
     <header class="m-10">
         <nav class="navbar navbar-container">
             <div>
-                <a href="{{ url('/conferences') }}" class="btn btn-outline-primary">Conferences</a>
+                <a href="{{ url('/conferences') }}" class="btn btn-outline-primary">@lang('site.conferences')</a>
             </div>
             @guest
-                <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
+                <a href="{{ route('login') }}" class="btn btn-primary">@lang('site.login')</a>
             @else
-                <a href="{{ route('logout') }}" id="logout-btn" class="btn btn-danger logout-btn">Logout ({{ auth()->user()->name }})</a>
+                <a href="{{ route('logout') }}" id="logout-btn" class="btn btn-danger logout-btn">@lang('site.logout')({{ auth()->user()->name }})</a>
                 <form action="{{ route('logout') }}" method="POST" id="logout-form" class="d-none">
                     @csrf
                 </form>
