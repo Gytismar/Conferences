@@ -14,18 +14,20 @@ class ConferencesSeeder extends Seeder
      */
     public function run()
     {
+        $random = rand(10, 60);
+        $randomFutureDate = date('Y-m-d', strtotime("+$random days"));
         (new Conference())->insert([
             [
                 'title' => Lorem::sentence(5),
                 'content' => Lorem::text(),
-                'conference_date' => '2024-10-22',
+                'conference_date' => $randomFutureDate,
                 'address' => Lorem::sentence(3),
                 'attending_people_count' => rand(20, 500),
             ],
             [
                 'title' => Lorem::sentence(5),
                 'content' => Lorem::text(),
-                'conference_date' => '2024-10-22',
+                'conference_date' => $randomFutureDate,
                 'address' => Lorem::sentence(3),
                 'attending_people_count' => rand(20, 500),
             ]
