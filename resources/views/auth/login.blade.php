@@ -29,10 +29,10 @@
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" id="remember-input" name="remember" value="1" {{ old('remember') ? 'checked' : '' }} class="form-check-input">
-                    <label class="form-check-label" for="remember-input">@lang('site.remember_me')</label>
-                </div>
+{{--                <div class="form-group form-check">--}}
+{{--                    <input type="checkbox" id="remember-input" name="remember" value="1" {{ old('remember') ? 'checked' : '' }} class="form-check-input">--}}
+{{--                    <label class="form-check-label" for="remember-input">@lang('site.remember_me')</label>--}}
+{{--                </div>--}}
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">@lang('site.login_button')</button>
                 </div>
